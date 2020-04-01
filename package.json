@@ -6,6 +6,7 @@
   "license": "MIT",
   "repository": "https://github.com/stocku/stocku-api.git",
   "scripts": {
+    "start": "node src/server.js",
     "dev": "nodemon src/server.js"
   },
   "dependencies": {
