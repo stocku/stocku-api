@@ -10,18 +10,21 @@ const routes = new Router();
 
 // Stores Routes
 routes.post('/sessions/store', StoreSessionController.store);
+
 // Store CRUD
 routes.post('/store', StoreController.store);
 routes.get('/store', StoreController.index);
 routes.get('/store/:id', StoreController.show);
 routes.put('/store/:id', authMiddleware, StoreController.update);
 routes.delete('/store/:id', authMiddleware, StoreController.destroy);
+
 // Product CRUD
 routes.post('/product', authMiddleware, ProductController.store);
 routes.get('/product', authMiddleware, ProductController.index);
 routes.get('/product/:id', authMiddleware, ProductController.show);
 routes.put('/product/:id', authMiddleware, ProductController.update);
 routes.delete('/product/:id', authMiddleware, ProductController.destroy);
+
 // Service CRUD
 routes.post('/service', authMiddleware, ServiceController.store);
 routes.get('/service', authMiddleware, ServiceController.index);
