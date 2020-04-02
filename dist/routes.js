@@ -10,18 +10,21 @@ const routes = new (0, _express.Router)();
 
 // Stores Routes
 routes.post('/sessions/store', _StoreSessionController2.default.store);
+
 // Store CRUD
 routes.post('/store', _StoreController2.default.store);
-routes.get('/store', _StoreController2.default.index);
-routes.get('/store/:id', _StoreController2.default.show);
+routes.get('/store', _auth2.default, _StoreController2.default.index);
+routes.get('/store/:id', _auth2.default, _StoreController2.default.show);
 routes.put('/store/:id', _auth2.default, _StoreController2.default.update);
 routes.delete('/store/:id', _auth2.default, _StoreController2.default.destroy);
+
 // Product CRUD
 routes.post('/product', _auth2.default, _ProductController2.default.store);
 routes.get('/product', _auth2.default, _ProductController2.default.index);
 routes.get('/product/:id', _auth2.default, _ProductController2.default.show);
 routes.put('/product/:id', _auth2.default, _ProductController2.default.update);
 routes.delete('/product/:id', _auth2.default, _ProductController2.default.destroy);
+
 // Service CRUD
 routes.post('/service', _auth2.default, _ServiceController2.default.store);
 routes.get('/service', _auth2.default, _ServiceController2.default.index);

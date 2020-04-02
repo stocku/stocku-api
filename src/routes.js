@@ -13,8 +13,8 @@ routes.post('/sessions/store', StoreSessionController.store);
 
 // Store CRUD
 routes.post('/store', StoreController.store);
-routes.get('/store', StoreController.index);
-routes.get('/store/:id', StoreController.show);
+routes.get('/store', authMiddleware, StoreController.index);
+routes.get('/store/:id', authMiddleware, StoreController.show);
 routes.put('/store/:id', authMiddleware, StoreController.update);
 routes.delete('/store/:id', authMiddleware, StoreController.destroy);
 
