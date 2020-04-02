@@ -1,32 +1,32 @@
-import Product from '../models/Product';
+import Service from '../models/Service';
 
-class ProductController {
+class ServiceController {
   async store(req, res) {
-    const product = await Product.create({
+    const service = await Service.create({
       ...req.body,
       store: req.storeId,
     });
 
-    return res.json(product);
+    return res.json(service);
   }
 
   async index(req, res) {
-    const products = await Product.find({ store: req.storeId });
+    const services = await Service.find({ store: req.storeId });
 
-    return res.json(products);
+    return res.json(services);
   }
 
   async show(req, res) {
-    const product = await Product.findOne({
+    const service = await Service.findOne({
       _id: req.params.id,
       store: req.storeId,
     });
 
-    return res.json(product);
+    return res.json(service);
   }
 
   async update(req, res) {
-    const product = await Product.findOneAndUpdate(
+    const service = await Service.findOneAndUpdate(
       {
         _id: req.params.id,
         store: req.storeId,
@@ -37,11 +37,11 @@ class ProductController {
       }
     );
 
-    return res.json(product);
+    return res.json(service);
   }
 
   async destroy(req, res) {
-    await Product.findOneAndDelete({
+    await Service.findOneAndDelete({
       store: req.storeId,
       _id: req.params.id,
     });
@@ -50,4 +50,4 @@ class ProductController {
   }
 }
 
-export default new ProductController();
+export default new ServiceController();
