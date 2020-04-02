@@ -23,6 +23,12 @@ Editar estabelecimento (PUT): '/store/id',
 Deletar estabelecimento (DELETE): '/store/id',
   No Body;
   
+Criar sesso de estabelecimento (POST): '/sessions/store'
+  Campos:
+    STRING: "username",
+    STIRNG: "password";
+
+
   
 Rotas de Produtos:
 
@@ -48,6 +54,7 @@ Editar produto do estabelecimento logado (PUT): '/product/id',
     
 Deletar produto do estabelecimento logado (DELETE): '/product/id',
   No Body;
+
  
  
 Rotas de Serviços:
