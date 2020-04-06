@@ -18,6 +18,10 @@ const ProductSchema = new Schema(
       type: Number,
       required: true,
     },
+    quantity: {
+      type: Number,
+      required: false,
+    },
     store: {
       type: Schema.Types.ObjectId,
       ref: 'Store',

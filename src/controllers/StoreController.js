@@ -4,13 +4,11 @@ class StoreController {
   async store(req, res) {
     const store = await Store.create(req.body);
 
-    // store.save();
-
     return res.json(store);
   }
 
   async index(req, res) {
-    const stores = await Store.find();
+    const stores = await Store.find({ store: req.storeId });
 
     return res.json(stores);
   }
